@@ -1,0 +1,8 @@
+* { /* This makes the font of the whole page default to Roboto */
+    font-family: 'Roboto', sans-serif;
+    color: rgba(240,240,240)
+}
+
+body { 
+    background-color: rgba(25,25,25);
+}

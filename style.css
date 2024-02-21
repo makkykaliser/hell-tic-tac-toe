@@ -1,8 +1,19 @@
 * { /* This makes the font of the whole page default to Roboto */
-    font-family: 'Roboto', sans-serif;
-    color: rgba(240,240,240)
+  font-family: 'Roboto', sans-serif;
+  color: rgb(225, 218, 229);
 }
 
 body { 
-    background-color: rgba(25,25,25);
+  background-color: rgba(28,25,30);
+  display: flex;
+  justify-content: center;
+}
+
+.game-title {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.row {
+  border-width: 1px;
 }

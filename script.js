@@ -76,7 +76,7 @@ function createCell(cell, cellIndex, rowId) {
     const onClick = () => {
         play(rowId, cellIndex)
     }
-    cellElement.addEventListener('click', onClick)
+    cellElement.addEventListener('click', onClick, {once: true})
     document.getElementById(rowId).append(cellElement)
 }
 

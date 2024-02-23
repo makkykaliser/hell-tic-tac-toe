@@ -9,11 +9,42 @@ body {
   justify-content: center;
 }
 
+.main {
+  width: 100%;
+  height: 100%;
+}
+
 .game-title {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+  display: block;
+}
+
+.board {
+  width: 403px;
+  height: 403px;
+  border-top: 1px solid rgba(214, 202, 222, 0.284);
+  border-left: 1px solid rgba(214, 202, 222, 0.284);
   margin-left: auto;
   margin-right: auto;
 }
 
 .row {
-  border-width: 1px;
+  display: block;
+}
+
+.cell {
+  display: inline-block;
+  width: 133px;
+  height: 133px;
+  border-right: 1px solid rgba(214, 202, 222, 0.284);
+  border-bottom: 1px solid rgba(214, 202, 222, 0.284);
+  /* box-shadow: inset 0 0 0 1px rgba(214, 202, 222, 0.284); */
+}
+
+.occupied-cell {
+  width: 0;
+  height: 0;
+  position: absolute;
 }

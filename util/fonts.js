@@ -1,4 +1,4 @@
-export default function importFonts() { // This is the same thing as just declaring them in the raw html, but programmatically
+export const importFonts= () => { // This is the same thing as just declaring them in the raw html, but programmatically
     const googleFonts = document.createElement('link')
     googleFonts.setAttribute('rel', 'preconnect')
     googleFonts.setAttribute('href', 'https://fonts.googleapis.com')

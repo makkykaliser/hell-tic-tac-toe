@@ -1,11 +1,13 @@
 import { Player } from "./enumerations"
-import { Gameplay } from "./gameplay"
+import { xIcon, oIcon } from "./util/icons"
 
 export class Board {
     
-    constructor(size) {
+    constructor(size, settings) {
         this.size = size
         this.grid = this.initialize(size)
+        this.turn = Player.x
+        this.settings = settings
     }
 
     initialize() {
@@ -27,23 +29,34 @@ export class Board {
             rowElement.setAttribute('class', 'row')
             console.debug(rowElement)
             document.getElementById('tic-tac-toe-board').append(rowElement)
-            var currentCellIndex = 0
+            var currentColumnIndex = 0
             row.forEach( (cell) => {
-                createCell(cell, currentCellIndex, `row-${currentRowIndex}`)
-                currentCellIndex++
+                this.createCell(cell, currentColumnIndex, currentRowIndex, `row-${currentRowIndex}`)
+                currentColumnIndex++
             })
             currentRowIndex++
         })
     }
 
-    createCell(cell, cellIndex, rowId) {
+    createCell(cell, colIndex, rowIndex, rowId) {
         const cellElement = document.createElement('div')
-        cellElement.setAttribute('id', `cell-${rowId}-${cellIndex}`)
+        cellElement.setAttribute('id', `cell-${rowIndex}-${colIndex}`)
         cellElement.setAttribute('class', 'cell')
         const onClick = () => {
-            Gameplay.play(rowId, cellIndex)
+            this.play(rowIndex, colIndex)
         }
         cellElement.addEventListener('click', onClick, {once: true})
         document.getElementById(rowId).append(cellElement)
+    }
+
+    play(row, col) {
+        this.grid[row][col] = this.turn
+        console.debug(this.grid)
+        console.debug(`it worked ${row} ${col}`)
+        const piece = this.turn === Player.x ? xIcon(this.settings.xColor) : oIcon(this.settings.oColor)
+        const cell = document.getElementById(`cell-${row}-${col}`)
+        cell.innerHTML = piece
+        console.debug(this.turn)
+        this.turn = this.turn === Player.x ? Player.o : Player.x
     }
 }

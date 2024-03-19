@@ -1,17 +1,15 @@
 import { importFonts } from "./util/fonts"
-import { xIcon, oIcon } from "./util/icons"
-import { Player } from "./enumerations"
 import { Board } from "./board"
-
-var board = Board(3)
-var turn = Player.x
-
-init()
+import { Settings } from "./settings"
 
 function init() {
     importFonts()
-    Board.initialize()
-    Board.refreshBoard()
+    const settings = new Settings()
+    settings.initialize()
+    const board = new Board(3, settings)
+    board.initialize()
+    board.refreshBoard()
     console.debug(board)
 }
 
+init()

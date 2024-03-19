@@ -50,8 +50,31 @@ body {
 }
 
 .occupied-cell {
-  width: 0;
-  height: 0;
-  margin: 50%;
   position: relative;
+}
+
+.game-piece {
+  display: inline-block;
+  width: 100%;
+  height: auto;
+}
+
+svg {
+  overflow:visible;
+}
+
+.scrim {
+  background-color:rgba(0,0,0,.16);
+  width: 100vw;
+  height: 100vh;
+}
+
+.settings-button {
+  color: rgba(28,25,30);
+  box-shadow: inset 0 0 0 10px rgb(255,255,255); 
+  position: absoulute;
+  right: 30px;
+  top: 30px;
+  width: 300px;
+  height: 300px;
 }

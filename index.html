@@ -1,24 +1,16 @@
 <!DOCTYPE html>
     <head>
         <title>Hell Tic Tac Toe</title>
-
-        <!-- This imports Roboto from Google Fonts -->
-        <link rel="preconnect" href="https://fonts.googleapis.com">
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
-
-        <!-- This imports IBM Plex Sans from Google Fonts -->
-        <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
-
         <link rel="stylesheet" href="style.css"> <!-- Importing our stylesheet -->
-
     </head>
     <body>
         <div class="main">
             <h1 class="game-title">Hell Tic Tac Toe</h1>
-            <div id="tic-tac-toe-board"></div>
+            <div id="tic-tac-toe-board" class="board"></div>
+
+            <!-- <svg class="game-piece" fill="white"><path d="M19,6.41L17.59,5L12,10.59L6.41,5L5,6.41L10.59,12L5,17.59L6.41,19L12,13.41L17.59,19L19,17.59L13.41,12L19,6.41Z" ></path></svg> -->
+
         </div>
-        
-        <script type="text/javascript" src="script.js"></script> <!-- Importing our javascript -->
+        <script type="module" src="script.js"></script> <!-- Importing our javascript -->
     </body>
 </html>
